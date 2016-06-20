@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @contact.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @contact.last_name %>
+</p>
+
+<ul>
+<% @contact.email_addresses.each do |address| %>
+  <li><%= address.email %> <%= link_to 'X', email_address_path(address, format: :json), method: 'delete', "data-confirm": "Are you sure to delete it?", remote: true, class: "delete-button" %>
+<% end %>
+</ul>
+
+<p>
+  <strong>Chinese first name:</strong>
+  <%= @contact.chinese_first_name %>
+</p>
+
+<p>
+  <strong>Chinese last name:</strong>
+  <%= @contact.chinese_last_name %>
+</p>
+
+<p>
+  <strong>Nick name:</strong>
+  <%= @contact.nick_name %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @contact.occupation %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @contact.title %>
+</p>
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>
