@@ -5,6 +5,12 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     @contacts = Contact.all
+    #respond_to do |format|
+      #format.html{}
+      #format.json{}
+      #format.doc{ ...... }
+      #format.xls{ ..... }
+      #I18n.locale = :"zh-HK"
   end
 
   # GET /contacts/1

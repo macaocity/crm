@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+<p>
+  <%= link_to '中', params.merge(lang: 'zh-HK') %> | 
+  <%= link_to 'EN', params.merge(lang: 'en') %>
+  
+</p>
 
 <%= yield %>
 

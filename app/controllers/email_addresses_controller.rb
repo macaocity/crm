@@ -54,9 +54,11 @@ class EmailAddressesController < ApplicationController
   # DELETE /email_addresses/1
   # DELETE /email_addresses/1.json
   def destroy
+    contact = @email_address.contact
+    
     @email_address.destroy
     respond_to do |format|
-      format.html { redirect_to email_addresses_url, notice: 'Email address was successfully destroyed.' }
+      format.html { redirect_to contact, notice: 'Email address was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
