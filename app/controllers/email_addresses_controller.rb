@@ -1,7 +1,7 @@
 class EmailAddressesController < ApplicationController
   before_action :set_contact
   before_action :set_email_address, only: [:show, :edit, :update, :destroy]
-  
+
 
   # GET /email_addresses
   # GET /email_addresses.json
@@ -47,7 +47,7 @@ class EmailAddressesController < ApplicationController
   def update
     respond_to do |format|
       if @email_address.update(email_address_params)
-        format.html { redirect_to @email_address, notice: 'Email address was successfully updated.' }
+        format.html { redirect_to contact_email_addresses_path(@contact), notice: 'Email address was successfully updated.' }
         format.json { render :show, status: :ok, location: @email_address }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class EmailAddressesController < ApplicationController
   # DELETE /email_addresses/1.json
   def destroy
     contact = @email_address.contact
-    
+
     @email_address.destroy
     respond_to do |format|
       format.html { redirect_to contact, notice: 'Email address was successfully destroyed.' }
@@ -73,7 +73,7 @@ class EmailAddressesController < ApplicationController
     def set_contact
       @contact = Contact.find(params[:contact_id])
     end
-  
+
     # Use callbacks to share common setup or constraints between actions.
     def set_email_address
       #@email_address = @contact.EmailAddresses.find(params[:id])
@@ -84,6 +84,6 @@ class EmailAddressesController < ApplicationController
     def email_address_params
       params.require(:email_address).permit(:email)
     end
-    
-    
+
+
 end
