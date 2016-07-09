@@ -10,34 +10,44 @@
       </ul>
     </div>
   <% end %>
-
+  <br/>
+  
+  
   <div class="field">
-    <%= f.label :first_name %><br>
+    <!-- <%= f.label :first_name %>-->
+    <%= t('First name') %>
+    <br>
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
+    <!-- <%= f.label :last_name %> -->
+    <%= t('Last name') %><br>
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :chinese_first_name %><br>
+    <%= t('Chinese first name') %><br>
     <%= f.text_field :chinese_first_name %>
   </div>
   <div class="field">
-    <%= f.label :chinese_last_name %><br>
+    <%= t('Chinese last name') %><br>
     <%= f.text_field :chinese_last_name %>
   </div>
   <div class="field">
-    <%= f.label :nick_name %><br>
+    <%= t('Nick name') %><br>
     <%= f.text_field :nick_name %>
   </div>
   <div class="field">
-    <%= f.label :occupation %><br>
+    <%= t('Occupation') %><br>
     <%= f.text_field :occupation %>
   </div>
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= t('Current address') %><br>
+    <%= f.text_field :current_address %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= t('Remark') %><br>
+    <%= f.text_area :remark %>
   </div>
   <div class="actions">
     <%= f.submit %>
