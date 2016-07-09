@@ -55,7 +55,7 @@ class EmailAddressesController < ApplicationController
       end
     end
   end
-
+  
   # DELETE /email_addresses/1
   # DELETE /email_addresses/1.json
   def destroy

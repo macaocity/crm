@@ -1,56 +1,62 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @contact.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @contact.last_name %>
-</p>
-
-<p>
-  <strong>Chinese first name:</strong>
-  <%= @contact.chinese_first_name %>
-</p>
-
-<p>
-  <strong>Chinese last name:</strong>
-  <%= @contact.chinese_last_name %>
-</p>
-
-<p>
-  <strong>Nick name:</strong>
-  <%= @contact.nick_name %>
-</p>
-
-<p>
-  <strong>Occupation:</strong>
-  <%= @contact.occupation %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @contact.title %>
-</p>
-
-<p>
-<ul>
-<% @contact.email_addresses.each do |address| %>
-  <li>
-      <%= link_to address.email, contact_email_addresses_path(@contact) %>
-      <!--<%= link_to 'X', contact_email_addresses_path(@contact, format: :json), method: 'delete', "data-confirm": "Are you sure to delete it?", remote: true, class: "delete-button" %> -->
-      <td><%= link_to 'X', [@contact,address], method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>
-  </li>
-      <% end %>
+<table width=100%>
+  <tr>
+    <td colspan="2"><h1><%=t('Contact Info') %></h1></td>
+  </tr>
+  <tr>
+    <td width="200px"><strong><%=t('First name')%>:</strong></td>
+    <td><%= @contact.first_name %></td>
+  </tr>
+  <tr>
+    <td><strong><%=t('Last name')%>:</strong></td>
+    <td><%= @contact.last_name %></td>
+  </tr>
   
-</ul>
+  <tr>
+    <td><strong><%=t('Chinese first name')%>:</strong></td>
+    <td><%= @contact.chinese_first_name %></td>
+  </tr>
+  <tr>
+    <td><strong><%=t('Chinese last name')%>:</strong></td>
+    <td><%= @contact.chinese_last_name %></td>
+  </tr>
+  <tr>
+    <td><strong><%=t('Nick name')%>:</strong></td>
+    <td><%= @contact.nick_name %></td>
+  </tr>
+  <tr>
+    <td><strong><%=t('Occupation')%>:</strong></td>
+    <td><%= @contact.occupation %></td>
+  </tr>
+  
+  <tr>
+    <td><strong><%=t('Title')%>:</strong></td>
+    <td><%= @contact.title %></td>
+  </tr>
+</table>
+
+<br/>
+<p>
+  <b><%= link_to t('Email Address'), contact_email_addresses_path(@contact) %>
+     &nbsp&nbsp <%= link_to t('New Email address'), new_contact_email_address_path(@contact) %></b>
 </p>
 
 <p>
-<%= link_to 'New Email address', new_contact_email_address_path(@contact) %>
+  <ul>
+    <% @contact.email_addresses.each do |address| %>
+      <li>
+          <%= link_to address.email, edit_contact_email_address_path(@contact, address) %>
+          <!--<%= link_to 'X', contact_email_addresses_path(@contact, format: :json), method: 'delete', "data-confirm": "Are you sure to delete it?", remote: true, class: "delete-button" %> -->
+          <td><%= link_to 'X', [@contact,address], method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>
+      </li>
+    <% end %>
+  </ul>
 </p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<p></p>
+<br/>
+<br/>
+
+<%= link_to t('Edit'), edit_contact_path(@contact) %> |
+<%= link_to t('Back'), contacts_path %>

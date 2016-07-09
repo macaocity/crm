@@ -2,7 +2,7 @@
 
 <p>
   <strong>Email:</strong>
-  <%= @email_address.email %>
+  <%= [@contact, @email_address] %>
 </p>
 
 <%= link_to 'Edit', edit_contact_email_address_path(@email_address) %> |
