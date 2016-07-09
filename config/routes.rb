@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :email_addresses
-  resources :contacts
+  #resources :email_addresses
+  #resources :contacts
+  
+  
+  resources :contacts do
+    resources :email_addresses
+  end
   
   root 'contacts#index'
   

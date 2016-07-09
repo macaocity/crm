@@ -10,12 +10,6 @@
   <%= @contact.last_name %>
 </p>
 
-<ul>
-<% @contact.email_addresses.each do |address| %>
-  <li><%= address.email %> <%= link_to 'X', email_address_path(address, format: :json), method: 'delete', "data-confirm": "Are you sure to delete it?", remote: true, class: "delete-button" %>
-<% end %>
-</ul>
-
 <p>
   <strong>Chinese first name:</strong>
   <%= @contact.chinese_first_name %>
@@ -39,6 +33,23 @@
 <p>
   <strong>Title:</strong>
   <%= @contact.title %>
+</p>
+
+<p>
+<ul>
+<% @contact.email_addresses.each do |address| %>
+  <li>
+      <%= link_to address.email, contact_email_addresses_path(@contact) %>
+      <!--<%= link_to 'X', contact_email_addresses_path(@contact, format: :json), method: 'delete', "data-confirm": "Are you sure to delete it?", remote: true, class: "delete-button" %> -->
+      <td><%= link_to 'X', [@contact,address], method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>
+  </li>
+      <% end %>
+  
+</ul>
+</p>
+
+<p>
+<%= link_to 'New Email address', new_contact_email_address_path(@contact) %>
 </p>
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |

@@ -21,7 +21,8 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
-        <td><%= link_to contact.first_name + ' ' + contact.last_name + ' (' + contact.chinese_last_name + contact.chinese_first_name + ', ' + contact.nick_name + ')', contact %>&nbsp&nbsp</td>
+        <!--<td><%= link_to contact.first_name + ' ' + contact.last_name + ' (' + contact.chinese_last_name + contact.chinese_first_name + ', ' + contact.nick_name + ')', contact %>&nbsp&nbsp</td> -->
+        <td><%= link_to  contact.check_contact_name, contact %></td>
         <td><%= contact.occupation %>&nbsp&nbsp</td>
         <!--<td><%= contact.title %></td>
         <td><%= link_to t('Show'), contact %></td>-->

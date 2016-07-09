@@ -16,6 +16,7 @@ class ContactsController < ApplicationController
   # GET /contacts/1
   # GET /contacts/1.json
   def show
+    #@email_address = @post.email_addresses.new
   end
 
   # GET /contacts/new
@@ -77,4 +78,5 @@ class ContactsController < ApplicationController
     def contact_params
       params.require(:contact).permit(:first_name, :last_name, :chinese_first_name, :chinese_last_name, :nick_name, :occupation, :title)
     end
+    
 end
