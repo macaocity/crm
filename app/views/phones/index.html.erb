@@ -11,7 +11,6 @@
       <tr>
         <td width="80px"><%= phone.category %></td>
         <td width="100px"><%= phone.tel %></td>
-        <!--<td><%= link_to 'Show', phone %></td> -->
         <td width="50px"><%= link_to t('Edit'), edit_contact_phone_path(@contact,phone) %></td>
         <td width="50px"><%= link_to t('Destroy'), [@contact,phone], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

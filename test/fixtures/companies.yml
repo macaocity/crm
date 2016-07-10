@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comp_name: MyString
+  comp_tel: MyString
+  comp_addr: MyString
+  comp_country: MyString
+  comp_city: MyString
+  title: MyString
+
+two:
+  comp_name: MyString
+  comp_tel: MyString
+  comp_addr: MyString
+  comp_country: MyString
+  comp_city: MyString
+  title: MyString

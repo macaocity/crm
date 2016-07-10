@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :phones
+  #resources :companies
+  #resources :phones
   #resources :email_addresses
   #resources :contacts
   
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   resources :contacts do
     resources :email_addresses
     resources :phones
+    resources :companies
   end
   
   root 'contacts#index'

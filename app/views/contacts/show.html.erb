@@ -57,7 +57,9 @@
     <% end %>
   </ul>
 </p>
+
 <br/>
+
 <p>
   <b><%= link_to t('Show Phone'), contact_phones_path(@contact) %>
      &nbsp&nbsp <%= link_to t('New Phone'), new_contact_phone_path(@contact) %></b>
@@ -76,6 +78,28 @@
 </p>
 
 <br/>
+
+
+<!-- Company -->
+<p>
+  <b><%= link_to t('Show Company'), contact_companies_path(@contact) %>
+     &nbsp&nbsp <%= link_to t('New Company'), new_contact_company_path(@contact) %></b>
+</p>
+
+<p>
+  <ul>
+    <% @contact.companies.each do |company| %>
+      <li>
+          <%= link_to company.comp_name + ' ' + company.comp_tel, edit_contact_company_path(@contact, company) %>
+          <!--<%= link_to 'X', contact_phones_path(@contact, format: :json), method: 'delete', "data-confirm": "Are you sure to delete it?", remote: true, class: "delete-button" %> -->
+          <td><%= link_to 'X', [@contact,company], method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<br/>
+
 <br/>
 
 <%= link_to t('Edit'), edit_contact_path(@contact) %> |
