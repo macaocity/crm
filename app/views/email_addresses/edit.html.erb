@@ -1,7 +1,8 @@
-<h1>Editing Email Address</h1>
+<h1><%= t('Editing Email Address') %></h1>
 
 <%= render 'form' %>
 
-
+<br />
 <%= link_to t('Show'), contact_email_addresses_path(@contact) %> |
-<%= link_to t('Back To Contact'), contact_path(@contact) %>
+<%= link_to t('Back To Contact'), contact_path(@contact) %> |
+<%= link_to t('Back To First Page'), contacts_path %>

@@ -2,10 +2,14 @@ zh-HK:
   hello: "Hello world"
   New Contact: 新增聯絡人
   Update Contact: 更新
-  Show: 瀏灠
   Back: 返回
-  Editing Contact: 編輯聯絡人
+  Back To Contact: 返回聯絡人頁面
+  Back To First Page: 返回首面
   Edit: 編輯
+  Editing Contact: 編輯聯絡人
+  Editing Company: 編輯聯絡人公司資料
+  Editing Email Address: 編輯聯絡人電郵
+  Editing Phone: 編輯聯絡人電話
   Destroy: 刪除
   Are you sure: 確定嗎
   Contact List: 聯絡人資訊
@@ -21,12 +25,17 @@ zh-HK:
   New Email address: 新增電郵
   New Phone: 新增電話
   New Company: 新增公司
-  Back To Contact: 返回聯絡人頁面
+  New Note: 新增便條
+  Note: 便條
   Listing Email Addresses: 聯絡人電郵
   Listing Phones: 聯絡人電話
+  Listing Companies: 聯絡人公司資料
+  Listing Notes: 聯絡人便條
+  Show: 瀏灠
   Show Email Address: 瀏灠所有電郵
   Show Phone: 瀏灠所有電話
   Show Company: 瀏灠所有公司
+  Show Note: 瀏灠便條
   Current Address: 目前地址
   Current address: 目前地址
   Address: 地址
@@ -36,4 +45,6 @@ zh-HK:
   Company Name: 公司名稱
   Country: 國家
   City:	城市
+  
+      
    

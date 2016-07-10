@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('Listing Notes') %>:</h1>
+
+<table>
+  <tbody>
+    <% @notes.each do |note| %>
+      <tr>
+        <td width="300px"><%= note.note %></td>
+        <td width="50px"><%= link_to t('Edit'), edit_contact_note_path(@contact,note) %></td>
+        <td width="50px"><%= link_to t('Destroy'), [@contact,note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('New Note'), new_contact_note_path %>&nbsp&nbsp|&nbsp&nbsp 
+<%= link_to t('Back To Contact'), contact_path(@contact) %>&nbsp&nbsp|&nbsp&nbsp
+<%= link_to t('Back To First Page'), contacts_path %>
+

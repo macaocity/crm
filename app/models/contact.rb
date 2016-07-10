@@ -2,6 +2,7 @@ class Contact < ActiveRecord::Base
     has_many :email_addresses
     has_many :phones
     has_many :companies
+    has_many :notes
     
     def check_contact_name
         @name = ""
@@ -36,5 +37,9 @@ class Contact < ActiveRecord::Base
         end
             
         return name
+    end
+    
+    def get_short_note
+        
     end
 end

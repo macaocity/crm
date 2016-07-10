@@ -1,0 +1,9 @@
+<h1><%= t('Editing Note') %></h1>
+
+<%= render 'form' %>
+
+<br>
+
+<%= link_to t('Show'), contact_notes_path(@contact) %> |
+<%= link_to t('Back To Contact'), contact_path(@contact) %> | 
+<%= link_to t('Back To First Page'), contacts_path %>

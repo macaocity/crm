@@ -1,7 +1,8 @@
-<h1>Editing Company</h1>
+<h1><%= t('Editing Company') %></h1>
 
 <%= render 'form' %>
 
 
 <%= link_to t('Show'), contact_companies_path(@contact) %> |
-<%= link_to t('Back To Contact'), contact_path(@contact) %>
+<%= link_to t('Back To Contact'), contact_path(@contact) %> |
+<%= link_to t('Back To First Page'), contacts_path %>

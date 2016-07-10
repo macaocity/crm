@@ -1,6 +1,9 @@
-<h1>Editing Phone</h1>
+<h1><%= t('Editing Phone') %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', contact_phones_path(@contact) %> |
-<%= link_to 'Back', contact_path(@contact) %>
+<br>
+
+<%= link_to t('Show'), contact_phones_path(@contact) %> |
+<%= link_to t('Back To Contact'), contact_path(@contact) %> | 
+<%= link_to t('Back To First Page'), contacts_path %>

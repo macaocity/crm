@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @note.note %>
+</p>
+
+<%= link_to 'Edit', edit_contact_note_path(@note) %> |
+<%= link_to 'Back', contact_notes_path %>

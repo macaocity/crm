@@ -40,6 +40,8 @@
 </table>
 
 <br/>
+
+<!-- Email address -->
 <p>
   <b><%= link_to t('Show Email Address'), contact_email_addresses_path(@contact) %>
      &nbsp&nbsp <%= link_to t('New Email address'), new_contact_email_address_path(@contact) %></b>
@@ -60,6 +62,7 @@
 
 <br/>
 
+<!-- Phone -->
 <p>
   <b><%= link_to t('Show Phone'), contact_phones_path(@contact) %>
      &nbsp&nbsp <%= link_to t('New Phone'), new_contact_phone_path(@contact) %></b>
@@ -93,6 +96,27 @@
           <%= link_to company.comp_name + ' ' + company.comp_tel, edit_contact_company_path(@contact, company) %>
           <!--<%= link_to 'X', contact_phones_path(@contact, format: :json), method: 'delete', "data-confirm": "Are you sure to delete it?", remote: true, class: "delete-button" %> -->
           <td><%= link_to 'X', [@contact,company], method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<br/>
+
+<!-- Note -->
+<p>
+  <b><%= link_to t('Show Note'), contact_notes_path(@contact) %>
+     &nbsp&nbsp <%= link_to t('New Note'), new_contact_note_path(@contact) %></b>
+</p>
+
+
+<p>
+  <ul>
+    <% @contact.notes.each do |note| %>
+      <li>
+          <%= link_to note.note, edit_contact_note_path(@contact, note) %>
+          <!--<%= link_to 'X', contact_notes_path(@contact, format: :json), method: 'delete', "data-confirm": "Are you sure to delete it?", remote: true, class: "delete-button" %> -->
+          <td><%= link_to 'X', [@contact,note], method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>
       </li>
     <% end %>
   </ul>
