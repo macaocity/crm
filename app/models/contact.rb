@@ -38,8 +38,5 @@ class Contact < ActiveRecord::Base
             
         return name
     end
-    
-    def get_short_note
-        
-    end
+
 end

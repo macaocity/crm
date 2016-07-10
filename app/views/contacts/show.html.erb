@@ -114,8 +114,7 @@
   <ul>
     <% @contact.notes.each do |note| %>
       <li>
-          <%= link_to note.note, edit_contact_note_path(@contact, note) %>
-          <!--<%= link_to 'X', contact_notes_path(@contact, format: :json), method: 'delete', "data-confirm": "Are you sure to delete it?", remote: true, class: "delete-button" %> -->
+          <%= link_to truncate(note.note, length: 50), edit_contact_note_path(@contact, note) %>
           <td><%= link_to 'X', [@contact,note], method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>
       </li>
     <% end %>

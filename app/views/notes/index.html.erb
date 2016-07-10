@@ -7,9 +7,10 @@
     <% @notes.each do |note| %>
       <tr>
         <td width="300px"><%= note.note %></td>
-        <td width="50px"><%= link_to t('Edit'), edit_contact_note_path(@contact,note) %></td>
-        <td width="50px"><%= link_to t('Destroy'), [@contact,note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td width="80px" align="center"><%= link_to t('Edit'), edit_contact_note_path(@contact,note) %></td>
+        <td width="80px"><%= link_to t('Destroy'), [@contact,note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <tr><td colspan="3">&nbsp</td></tr>
     <% end %>
   </tbody>
 </table>
