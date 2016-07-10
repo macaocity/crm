@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('Listing Phones') %>:</h1>
+<br/>
+<b><font size="3px"><%= @contact.check_contact_name %></font></b>
+<br/>
+<br/>
+<table>
+  <tbody>
+    <% @phones.each do |phone| %>
+      <tr>
+        <td width="80px"><%= phone.category %></td>
+        <td width="100px"><%= phone.tel %></td>
+        <!--<td><%= link_to 'Show', phone %></td> -->
+        <td width="50px"><%= link_to t('Edit'), edit_contact_phone_path(@contact,phone) %></td>
+        <td width="50px"><%= link_to t('Destroy'), [@contact,phone], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('New Phone'), new_contact_phone_path %>&nbsp&nbsp|&nbsp&nbsp 
+<%= link_to t('Back To Contact'), contact_path(@contact) %>

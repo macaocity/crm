@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :phones
   #resources :email_addresses
   #resources :contacts
   
   
   resources :contacts do
     resources :email_addresses
+    resources :phones
   end
   
   root 'contacts#index'

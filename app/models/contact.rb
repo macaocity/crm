@@ -1,5 +1,6 @@
 class Contact < ActiveRecord::Base
     has_many :email_addresses
+    has_many :phones
     
     def check_contact_name
         @name = ""

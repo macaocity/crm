@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <!--<%= @phone.category %>-->
+  <%= [@contact, @category] %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <!--<%= @phone.tel %>-->
+  <%= [@contact, @tel] %>
+</p>
+
+<%= link_to 'Edit', edit_phone_path(@phone) %> |
+<%= link_to 'Back', phones_path %>
+
+<%= link_to 'Edit', edit_contact_phone_path(@email_address) %> |
+<%= link_to 'Back', contact_phones_path %>

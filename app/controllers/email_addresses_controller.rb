@@ -33,7 +33,8 @@ class EmailAddressesController < ApplicationController
     respond_to do |format|
       if @email_address.save
         #format.html { redirect_to @email_address, notice: 'Email address was successfully created.' }
-        format.html { redirect_to @contact, notice: 'Email address was successfully created.' }
+        #format.html { redirect_to @contact, notice: 'Email address was successfully created.' }
+        format.html { redirect_to new_contact_email_address_path, notice: 'Phone was successfully created.' }
         format.json { render :show, status: :created, location: @email_address }
       else
         format.html { render :new }
@@ -85,6 +86,5 @@ class EmailAddressesController < ApplicationController
     def email_address_params
       params.require(:email_address).permit(:email)
     end
-    
-    
+
 end

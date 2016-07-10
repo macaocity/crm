@@ -45,6 +45,7 @@
      &nbsp&nbsp <%= link_to t('New Email address'), new_contact_email_address_path(@contact) %></b>
 </p>
 
+
 <p>
   <ul>
     <% @contact.email_addresses.each do |address| %>
@@ -56,8 +57,24 @@
     <% end %>
   </ul>
 </p>
+<br/>
+<p>
+  <b><%= link_to t('Show Phone'), contact_phones_path(@contact) %>
+     &nbsp&nbsp <%= link_to t('New Phone'), new_contact_phone_path(@contact) %></b>
+</p>
 
-<p></p>
+<p>
+  <ul>
+    <% @contact.phones.each do |phone| %>
+      <li>
+          <%= link_to phone.category + ' ' + phone.tel, edit_contact_phone_path(@contact, phone) %>
+          <!--<%= link_to 'X', contact_phones_path(@contact, format: :json), method: 'delete', "data-confirm": "Are you sure to delete it?", remote: true, class: "delete-button" %> -->
+          <td><%= link_to 'X', [@contact,phone], method: :delete, data: { confirm: 'Are you sure to delete it?' } %></td>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
 <br/>
 <br/>
 
